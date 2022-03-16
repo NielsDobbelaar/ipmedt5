@@ -18,6 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/', function(\Illuminate\Http\Request $request) {
-    \Illuminate\Support\Facades\Storage::append("log.txt", $request->get("banaan"));
+Route::post('/', function(Request $request) {
+    \Illuminate\Support\Facades\Storage::append("log.txt", $request->getContent());
 });
