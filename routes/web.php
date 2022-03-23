@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/sturen', function(){
+//     return response("banaan", 200)->header("Content-type", "text/plain");
+// });
