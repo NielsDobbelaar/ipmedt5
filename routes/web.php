@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailboxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/sturen', function(){
-//     return response("banaan", 200)->header("Content-type", "text/plain");
-// });
+Route::get('/', [MailboxController::class, 'frontPage']);
+
