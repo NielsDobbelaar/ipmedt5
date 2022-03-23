@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
+use \App\Models\Mailbox;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/', function(Request $request) {
-    \Illuminate\Support\Facades\Storage::append("log.txt", $request->getContent());
+    $data = $request->getContent();
+
+    \App\Http\Controllers\MailboxController::changeDatabase();
+
+
 });
 
 Route::get('/', function(){
-    return (new Response("banaan", 200))->header("Content-type", "text/plain");
+    $mailbox = \App\Models\Mailbox::first();
+    $data = [$mailbox->is_mailbox_open, $mailbox->space_in_mailbox];
+
+    return (new Response($data, 200))->header("Content-type", "text/plain");
 });

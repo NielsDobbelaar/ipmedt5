@@ -14,9 +14,8 @@ class CreateMailboxTable extends Migration
     public function up()
     {
         Schema::create('mailbox', function (Blueprint $table) {
-            $table->boolean("mail_in_mailbox");
-            $table->boolean("is_mailbox_open");
-            $table->float("percentage_space_in_mailbox");
+            $table->string("is_mailbox_open")->nullable();
+            $table->string("space_in_mailbox")->nullable();
         });
     }
 

@@ -14,10 +14,7 @@ use App\Http\Controllers\MailboxController;
 |
 */
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/', [MailboxController::class, 'frontPage']);
+
+
 
