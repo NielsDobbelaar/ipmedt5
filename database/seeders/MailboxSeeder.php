@@ -14,7 +14,6 @@ class MailboxSeeder extends Seeder
     public function run()
     {
         DB::table("mailbox")->insert([
-            "is_mailbox_open" => "1",
             "space_in_mailbox" => "1"
         ]);
     }
