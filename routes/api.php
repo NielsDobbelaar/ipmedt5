@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 use \App\Models\Mailbox;
+use Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,15 +23,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/', function(Request $request) {
     $data = $request->getContent();
-
-    \App\Http\Controllers\MailboxController::changeDatabase();
-
-
+    $lines = Storage::get('database.txt');
+    $olddata = explode("\n", $lines);
+    if($data != end($olddata)){
+        Storage::disk("local")->append("database.txt", $data);
+    }
 });
 
 Route::get('/', function(){
-    $mailbox = \App\Models\Mailbox::first();
-    $data = [$mailbox->is_mailbox_open, $mailbox->space_in_mailbox];
+    
+    $lines = Storage::get('database.txt');
+    $data = explode("\n", $lines);
 
-    return (new Response($data, 200))->header("Content-type", "text/plain");
+
+    // Storage::disk("local")->append("database2.txt", end($data));
+
+
+    return (new Response(end($data), 200))->header("Content-type", "text/plain");
 });
