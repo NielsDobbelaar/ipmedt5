@@ -14,29 +14,36 @@
     <header><h1>Insert Title</h1></header>
 
     <main class="wrapper">
-        <section class="UpperSection">
-            <h2>MAIL</h2>
-            @if($mailbox->mail_in_mailbox == true)
-                <p class="GreenText">RECIEVED</p>
-            @else
-                <p class="RedText">EMPTY</p>
-            @endif
+        <section>
+            <h2>Mailbox Status</h2>
+            <p class="OrangeText">Empty</p>
         </section>
 
-        <section class="UpperSection">
-            <h2>KEY LOCK</h2>
-            @if($mailbox->is_mailbox_open == true)
-                <p class="GreenText">OPEN</p>
-            @else
-                <p class="RedText">LOCKED</p>
-            @endif
-            <button>Lock / Unlock</button>
-        </section>
-
-        <section class="LastSection">
-            <h2>MAILBOX FREE SPACE</h2>
-            <p>{{$mailbox->percentage_space_in_mailbox}}%</p>
-            <progress value="{{$mailbox->percentage_space_in_mailbox}}" max="100"></progress>
+        <section class="TimeStampsWrapper">
+            <h2>Timestamps</h2>
+            <div class="TimeStamps">
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+            </div>
         </section>
     </main>
 </body>
