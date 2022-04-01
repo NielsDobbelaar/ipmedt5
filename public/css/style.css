@@ -94,24 +94,6 @@ header
 	}
 } */
 
-@media only screen and (min-width: 900px){
-    header
-    {
-        font-size: 28px !important;
-    }
-
-    .wrapper
-    {
-        align-content: center;
-        margin-left: 27.5vw;
-    }
-
-    .wrapper section
-    {
-        width: 50vw !important;
-    }
-}
-
 @media only screen and (min-width: 400px){
     *
     {
@@ -202,6 +184,16 @@ header
         border-radius: 1rem;
     }
 
+    .Button
+    {        
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        text-decoration: none;
+        font-size: 4.5vw;
+        color: white;
+        text-shadow: 0 0 30px white;
+    }
+
     .GreenText
     {
         color: rgb(15, 214, 15);
@@ -231,5 +223,28 @@ header
         100% {
             background-position: 0% 50%;
         }
+    }
+}
+
+@media only screen and (min-width: 900px){
+    header
+    {
+        font-size: 28px;
+    }
+
+    .wrapper
+    {
+        align-content: center;
+        margin-left: 27.5vw;
+    }
+
+    .wrapper section
+    {
+        width: 50vw;
+    }
+
+    .Button
+    {
+        font-size: 2vw;
     }
 }

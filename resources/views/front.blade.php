@@ -42,8 +42,8 @@
                 <p class="TimeStampsText">Insert text at: """timestamp"""</p>
                 <p class="TimeStampsText">Insert text at: """timestamp"""</p>
                 <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
             </div>
+            <a href="" class="Button">CLEAR DB</a>
         </section>
     </main>
 </body>
