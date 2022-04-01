@@ -15,6 +15,4 @@ use App\Http\Controllers\MailboxController;
 */
 
 Route::get('/', [MailboxController::class, 'frontPage']);
-
-
-
+Route::get('/empty', [MailboxController::class, 'empty'])->name("front");

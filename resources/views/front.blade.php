@@ -16,34 +16,29 @@
     <main class="wrapper">
         <section>
             <h2>Mailbox Status</h2>
-            <p class="OrangeText">Empty</p>
+            @if ( end($timestamp)[0][0] == 2 )
+                <p class="RedText">Full</p>
+            @elseif ( end($timestamp)[0][0] == 1 )
+                <p class="OrangeText">Recieved</p>
+            @else
+                <p class="GreenText">Empty</p>
+            @endif
         </section>
 
         <section class="TimeStampsWrapper">
             <h2>Timestamps</h2>
             <div class="TimeStamps">
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
-                <p class="TimeStampsText">Insert text at: """timestamp"""</p>
+                @foreach($timestamp as $t)
+                    @if ( $t[0] == 2 )
+                        <p class="TimeStampsText">Mailbox full at {{end($t)}}</p>
+                    @elseif ( $t[0] == 1 )
+                        <p class="TimeStampsText">Recieved mail at {{end($t)}}</p>
+                    @else
+                        <p class="TimeStampsText">Mailbox emptied at {{end($t)}}</p>
+                    @endif
+                @endforeach
             </div>
-            <a href="" class="Button">CLEAR DB</a>
+            <a href="/empty" class="Button">CLEAR DB</a>
         </section>
     </main>
 </body>
