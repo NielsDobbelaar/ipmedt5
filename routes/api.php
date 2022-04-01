@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 use \App\Models\Mailbox;
-// use Storage;
 
 /*
 |--------------------------------------------------------------------------
