@@ -31,7 +31,7 @@ Route::post('/', function(Request $request) {
     if($data != explode(" ", end($olddata))[0]){
         Storage::disk("local")->append("database.txt", $data . " " . $time);
     }
-};
+});
 
 Route::get('/', function(){
     
