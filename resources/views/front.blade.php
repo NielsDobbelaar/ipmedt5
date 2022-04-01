@@ -28,7 +28,7 @@
         <section class="TimeStampsWrapper">
             <h2>Timestamps</h2>
             <div class="TimeStamps">
-                @foreach($timestamp as $t)
+                @foreach(array_reverse($timestamp) as $t)
                     @if ( $t[0] == 2 )
                         <p class="TimeStampsText">Mailbox full at {{end($t)}}</p>
                     @elseif ( $t[0] == 1 )
@@ -39,6 +39,7 @@
                 @endforeach
             </div>
             <a href="/empty" class="Button">CLEAR DB</a>
+            <a href="/" class="Button">REFRESH PAGE</a>
         </section>
     </main>
 </body>
