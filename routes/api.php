@@ -24,10 +24,14 @@ Route::post('/', function(Request $request) {
     $data = $request->getContent();
     $lines = Storage::get('database.txt');
     $olddata = explode("\n", $lines);
-    if($data != end($olddata)){
-        Storage::disk("local")->append("database.txt", $data);
+    $time = now();
+
+
+
+    if($data != explode(" ", end($olddata))[0]){
+        Storage::disk("local")->append("database.txt", $data . " " . $time);
     }
-});
+};
 
 Route::get('/', function(){
     
@@ -38,5 +42,5 @@ Route::get('/', function(){
     // Storage::disk("local")->append("database2.txt", end($data));
 
 
-    return (new Response(end($data), 200))->header("Content-type", "text/plain");
+    return (new Response(explode(" ", end($data))[0], 200))->header("Content-type", "text/plain");
 });
