@@ -11,7 +11,7 @@
     <title>Mailbox</title>
 </head>
 <body>
-    <header><h1>Insert Title</h1></header>
+    <header><h1>Brievenbus</h1></header>
 
     <main class="wrapper">
         <section>
@@ -32,7 +32,7 @@
                     @if ( $t[0] == 2 )
                         <p class="TimeStampsText">Mailbox full at {{end($t)}}</p>
                     @elseif ( $t[0] == 1 )
-                        <p class="TimeStampsText">Recieved mail at {{end($t)}}</p>
+                        <p class="TimeStampsText">Received mail at {{end($t)}}</p>
                     @else
                         <p class="TimeStampsText">Mailbox emptied at {{end($t)}}</p>
                     @endif
