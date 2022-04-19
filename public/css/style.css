@@ -1,0 +1,155 @@
+@media only screen and (min-width: 360px){
+    *
+    {
+        margin: 0;
+    }
+
+    body
+    {
+        background: linear-gradient(-45deg, rgb(32, 32, 32), rgb(59, 59, 59), rgb(110, 110, 110), rgb(122, 122, 122));
+        background-size: 400% 400%;
+        animation: gradient 20s ease infinite;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    header
+    {
+        position: absolute;
+        margin-top: 3vh;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        top: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-family: 'Bungee', cursive;
+        text-shadow: 0 0 30px #141414;
+    }
+
+    .wrapper
+    {
+        width: 90vw;
+        /* margin: 0 auto; */
+        margin-top: 20vh;
+        display: flex; 
+        flex-flow: column wrap;
+        max-width: 40vw;
+        gap: 1vh;
+        font-family: 'Raleway', sans-serif;
+        height: 100%;
+    }
+
+    .wrapper h2
+    {
+        padding: 5px;
+        color: #777777;
+    }
+
+    .wrapper section
+    {
+        height: 18vh;
+        width: 90vw;
+        margin-left: 5vw;
+        border: 2px solid #232323;
+        border-radius: 1rem;
+        background-color: #141414;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 25%;
+    }
+
+    .wrapper section p
+    {
+        font-size: 30px;
+    }
+
+    .TimeStamps
+    {
+        overflow-y: scroll;
+    }
+
+    .TimeStampsWrapper
+    {
+        height: 50vh !important;
+        gap: 4% !important;
+        padding-bottom: 2vh;
+    }
+
+    .TimeStampsText
+    {
+        background-color: #777777;
+        font-size: 18px !important;
+        margin-top: .5vh;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-radius: 1rem;
+    }
+
+    .Button
+    {        
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        text-decoration: none;
+        font-size: 4.5vw;
+        color: white;
+        text-shadow: 0 0 30px white;
+        background-color: #141414;
+    }
+
+    .GreenText
+    {
+        color: rgb(15, 214, 15);
+        text-shadow: 0 0 15px #fff, 0 0 30px rgb(15, 214, 15);
+    }
+
+    .RedText
+    {
+        color: red;
+        text-shadow: 0 0 15px #fff, 0 0 30px red;
+    }
+
+    .OrangeText
+    {
+        color: orange;
+        text-shadow: 0 0 15px #fff, 0 0 30px orange;
+    }
+
+    @keyframes gradient 
+    {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 900px){
+    header
+    {
+        font-size: 28px;
+    }
+
+    .wrapper
+    {
+        align-content: center;
+        margin-left: 27.5vw;
+    }
+
+    .wrapper section
+    {
+        width: 50vw;
+    }
+
+    .Button
+    {
+        font-size: 1vw;
+    }
+}

@@ -3,18 +3,18 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
-class DatabaseSeeder extends Seeder
+use DB;
+class MailboxSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            MailboxSeeder::class,
+        DB::table("mailbox")->insert([
+            "space_in_mailbox" => "1"
         ]);
     }
 }
